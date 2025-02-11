@@ -36,6 +36,8 @@ const mockData = () => {
                         "cvssV3": {
                           "score": 3.3,
                         },
+                        "publishedOn": "2025-01-28T00:00:00Z",
+                        "lastModified": "2025-01-28T00:00:00Z",
                         "firstImageOccurrence": "2025-01-29T17:38:36.570058880Z",
                         "severity": "MODERATE_VULNERABILITY_SEVERITY",
                         "state": "OBSERVED",
@@ -65,6 +67,8 @@ const mockData = () => {
                         "cvssV3": {
                           "score": 5.0,
                         },
+                        "publishedOn": "2025-01-28T00:00:00Z",
+                        "lastModified": "2025-01-28T00:00:00Z",
                         "firstImageOccurrence": "2025-01-29T17:38:36.570058880Z",
                         "severity": "MODERATE_VULNERABILITY_SEVERITY",
                         "state": "OBSERVED",
@@ -94,6 +98,8 @@ const mockData = () => {
                         "cvssV3": {
                           "score": 1.0,
                         },
+                        "publishedOn": "2025-01-28T00:00:00Z",
+                        "lastModified": "2025-01-28T00:00:00Z",
                         "firstImageOccurrence": "2025-01-29T17:38:36.570058880Z",
                         "severity": "MODERATE_VULNERABILITY_SEVERITY",
                         "state": "OBSERVED",
