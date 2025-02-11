@@ -36,11 +36,11 @@ First copy the `catalog_default` directory and rename it to `catalog`:
 cp -R catalog_default catalog
 ```
 
-Edit line 20 of `./catalog/components/test-app.yaml` to have a comma separated string of deployment names from the ACS API you wish to test.
+Edit line 20 of `./catalog/components/test-app.yaml` to have deployment namhave deployment name(s). You can reference one or multiple by adding a comma separated string of deployment names. This will allow multipe deployments to display vulnerability data about them.
 
 ### Export Environment Variables
 
-The `ACS_API_URL` and `ACS_API_KEY` will need to be set in order for the route to work in the `app-config.yaml` file. The purpose of this route is to access data from the ACS endpoint.
+The `ACS_API_URL` and `ACS_API_KEY` will need to be set in order for the route to work in the `app-config.yaml` file. The purpose of this route is to access data from the ACS endpoint. Additionally, in order for the `View in Advanced Cluster Security` button to work, you will need to provide the `ACS_URL` environment variable.
 
 To start the app, run:
 ```sh
@@ -57,7 +57,6 @@ In `app-config.yaml` first add the proxies:
 proxy:
   endpoints:
     '/acs':
-      credentials: dangerously-allow-unauthenticated
       target: ${ACS_API_URL}
       headers:
         authorization: "Bearer ${ACS_API_KEY}"
@@ -95,8 +94,15 @@ Here's an example of how to configure all of the various plugins in your dynmaic
                         xs: "span 12"
 ```
 
-Each entity in the catalog will need to have an annotation added that references the deployment(s) in order to display vulnerability data for them. Here is an example:
+Each entity in the catalog will need to have an annotation added that references the deployment(s) in order to display vulnerability data for them. You can provide a single deployment name or a comma separated list of multiple. Here is an example:
 ```
 acs/deployment-name: "test-deployment-1,test-deployment-2,test-deployment-3"
 ```
+
+## Connect
+
+Any questions, please ask one of the maintainers
+
+- [@sachaudh](https://github.com/sachaudh)
+- [@maknop](https://github.com/maknop/)
 
